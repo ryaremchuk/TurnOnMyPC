@@ -2,20 +2,25 @@
 
 namespace TurnOnMyPC
 {
-    //todo: refactor this. this is not good solution. But I need to do it quick. RY
     public class Core
     {
-        private static RemotePCManager _remotePCManager;
+        private static PCToTurnOnQueue _pcToTurnOnQueue;
         private static UserInfoStorage _userInfoStorage;
 
-        public static RemotePCManager RemotePCManager
+        public static PCToTurnOnQueue PCToTurnOnQueue
         {
-            get { return _remotePCManager ?? (_remotePCManager = new RemotePCManager()); }
+            get { return _pcToTurnOnQueue; }
         }
 
         public static UserInfoStorage UserInfoStorage
         {
-            get { return _userInfoStorage ?? (_userInfoStorage = new UserInfoStorage()); }
+            get { return _userInfoStorage; }
+        }
+
+        public static void Initialize()
+        {
+             _userInfoStorage = new UserInfoStorage();
+            _pcToTurnOnQueue = new PCToTurnOnQueue();
         }
     }
 }

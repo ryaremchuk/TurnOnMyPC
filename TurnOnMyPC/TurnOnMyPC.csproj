@@ -51,9 +51,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\Data.xml" />
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="NotRegisteredPC.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Success.aspx" />
@@ -69,6 +69,7 @@
     <Content Include="WebService.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessEntities\PCState.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -84,10 +85,12 @@
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Logic\BusinessEntities\UserPCInfo.cs" />
-    <Compile Include="Logic\MacAddressRetriever.cs" />
+    <Compile Include="BusinessEntities\UserPCInfo.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\PCToTurnOnQueue.cs" />
     <Compile Include="Logic\UserInfoStorage.cs" />
-    <Compile Include="Logic\XmlSerializationService.cs" />
     <Compile Include="NotRegisteredPC.aspx.cs">
       <DependentUpon>NotRegisteredPC.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -96,7 +99,6 @@
       <DependentUpon>NotRegisteredPC.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Logic\RemotePCManager.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

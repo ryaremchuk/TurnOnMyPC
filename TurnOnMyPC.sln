@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnOnMyPC", "TurnOnMyPC.csproj", "{7375CC7A-EDCB-4986-BC9F-83A601608EA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnOnMyPC", "TurnOnMyPC\TurnOnMyPC.csproj", "{7375CC7A-EDCB-4986-BC9F-83A601608EA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnOnMyPCProcessing", "..\TurnOnMyPCProcessing\TurnOnMyPCProcessing.csproj", "{119B255B-1BF1-4589-A4F6-C10B3D1BA27C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnOnMyPCProcessing", "TurnOnMyPCProcessing\TurnOnMyPCProcessing.csproj", "{119B255B-1BF1-4589-A4F6-C10B3D1BA27C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

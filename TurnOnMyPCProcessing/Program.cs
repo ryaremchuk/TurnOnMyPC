@@ -13,12 +13,17 @@ namespace TurnOnMyPCProcessing
         /// </summary>
         static void Main()
         {
+#if RELEASE
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
 			{ 
 				new ProcessingService() 
 			};
             ServiceBase.Run(ServicesToRun);
+#else
+            var service = new ProcessingService();
+            service.Process();
+#endif
         }
     }
 }

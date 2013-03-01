@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 
-namespace TurnOnMyPC.Logic
+namespace TurnOnMyPCProcessing
 {
     public class RemotePCManager
     {
@@ -18,12 +18,7 @@ namespace TurnOnMyPC.Logic
 
         public void WakeOnLan(string macAddress)
         {
-            WakeFunction(macAddress);
-        }
-
-        private void WakeFunction(string macAddress)
-        {
-            var macAddressBytes = ParseMac(macAddress);
+            var macAddressBytes = TransformMac(macAddress);
 
             var packet = new List<byte>();
 
@@ -39,7 +34,7 @@ namespace TurnOnMyPC.Logic
             client.Send(packet.ToArray(), packet.Count);
         }
 
-        private byte[] ParseMac(string mac)
+        private byte[] TransformMac(string mac)
         {
             var value = long.Parse(mac, NumberStyles.HexNumber, CultureInfo.CurrentCulture.NumberFormat);
             var macBytes = BitConverter.GetBytes(value);

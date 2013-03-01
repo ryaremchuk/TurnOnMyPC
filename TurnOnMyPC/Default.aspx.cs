@@ -24,47 +24,47 @@ namespace TurnOnMyPC
 
         private void ProcessRegisteredPC()
         {
-            pnlLogin.Visible = false;
-            pnlPCStatus.Visible = true;
+            //pnlLogin.Visible = false;
+            //pnlPCStatus.Visible = true;
 
-            var pcName = Core.UserInfoStorage.GetUserPCName(txtLogin.Text);
-            var isTurnedOn = Core.RemotePCManager.IsTurnedOn(pcName);
+            //var pcName = Core.UserInfoStorage.GetUserPCName(txtLogin.Text);
+            //var isTurnedOn = Core.RemotePCManager.IsTurnedOn(pcName);
 
-            lblPCName.Text = pcName;
+            //lblPCName.Text = pcName;
 
-            if (isTurnedOn)
-            {
-                lblPCStatus.Text = "Running";
-                lblPCStatus.ForeColor = Color.Green;
-                btnTurnOn.Visible = false;
-            }
-            else
-            {
-                lblPCStatus.Text = "Turned off";
-                lblPCStatus.ForeColor = Color.Red;
-                btnTurnOn.Visible = true;
-            }
+            //if (isTurnedOn)
+            //{
+            //    lblPCStatus.Text = "Running";
+            //    lblPCStatus.ForeColor = Color.Green;
+            //    btnTurnOn.Visible = false;
+            //}
+            //else
+            //{
+            //    lblPCStatus.Text = "Turned off";
+            //    lblPCStatus.ForeColor = Color.Red;
+            //    btnTurnOn.Visible = true;
+            //}
         }
 
         protected void btnTurnOn_OnClick(object sender, EventArgs e)
         {
-            var mac = Core.UserInfoStorage.GetUserMacAddress(txtLogin.Text);
-            Core.RemotePCManager.WakeOnLan(mac);
+            //var mac = Core.UserInfoStorage.GetUserMacAddress(txtLogin.Text);
+            //Core.RemotePCManager.WakeOnLan(mac);
 
-            Response.Redirect("~/Success.aspx");
+            //Response.Redirect("~/Success.aspx");
         }
 
         protected void btnEnterLogin_OnClick(object sender, EventArgs e)
         {
-            var isPCRegistered = Core.UserInfoStorage.IsUserPCRegistered(txtLogin.Text);
-            if (isPCRegistered)
-            {
-                ProcessRegisteredPC();
-            }
-            else
-            {
-                ProcessNotRegisterePC();
-            }
+            //var isPCRegistered = Core.UserInfoStorage.IsUserPCRegistered(txtLogin.Text);
+            //if (isPCRegistered)
+            //{
+            //    ProcessRegisteredPC();
+            //}
+            //else
+            //{
+            //    ProcessNotRegisterePC();
+            //}
         }
     }
 }
