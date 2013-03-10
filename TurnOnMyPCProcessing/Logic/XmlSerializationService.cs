@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 
-namespace TurnOnMyPC.Logic
+namespace TurnOnMyPCProcessing.Logic
 {
     public static class XmlSerializationService<T> where T : class
     {

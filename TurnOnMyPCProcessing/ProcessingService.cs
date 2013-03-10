@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.ServiceProcess;
 using System.Timers;
+using TurnOnMyPCProcessing.Logic;
 
 namespace TurnOnMyPCProcessing
 {
@@ -11,6 +13,7 @@ namespace TurnOnMyPCProcessing
 
         private readonly RemotePCManager _remotePcManager = new RemotePCManager();
         private readonly UserInfoStorage _userInfoStorage = new UserInfoStorage();
+        private readonly WebServiceWrapper _webServiceWrapper = new WebServiceWrapper();
 
         public ProcessingService()
         {
@@ -32,16 +35,45 @@ namespace TurnOnMyPCProcessing
         
         private void StartPcTimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DoStartPC();
+            }
+            catch
+            {
+                //
+            }
+
             _startPCTimer.Start();
+
         }
-
-
 
         private void UpdateInfoTimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DoUpdatePCStatuses();
+            }
+            catch
+            {
+                //
+            }
             _updateInfoTimer.Start();
+        }
+
+        private void DoUpdatePCStatuses()
+        {
+            _userInfoStorage.RefreshDatasource();
+            _webServiceWrapper.RefreshPCStatuses(_userInfoStorage.GetDatasource());
+        }
+
+        private void DoStartPC()
+        {
+            var pcAddresses = _webServiceWrapper.GetMacsToTurnOn();
+            foreach (var address in pcAddresses)
+            {
+                _remotePcManager.WakeOnLan(address);
+            }
         }
 
         protected override void OnStop()
@@ -55,6 +87,7 @@ namespace TurnOnMyPCProcessing
             _startPCTimer.Interval = 60 * 1000;
             _startPCTimer.AutoReset = false;
             _startPCTimer.Elapsed += StartPcTimerOnElapsed;
+            _startPCTimer.Start();
         }
 
         private void CreateUpdateInfoJob()
@@ -62,6 +95,7 @@ namespace TurnOnMyPCProcessing
             _updateInfoTimer.Interval = 60 * 1000;
             _updateInfoTimer.AutoReset = false;
             _updateInfoTimer.Elapsed += UpdateInfoTimerOnElapsed;
+            _updateInfoTimer.Start();
         }
 
         private void StopStartPCJobTimer()

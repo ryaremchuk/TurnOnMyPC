@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -19,9 +20,9 @@ namespace TurnOnMyPC.Logic
             }
         }
 
-        public IEnumerable<string> GetAll()
+        public string[] GetAll()
         {
-            return _data;
+            return _data.ToArray();
         }
 
         public void Clear()

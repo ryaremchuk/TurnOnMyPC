@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.Web;
+using System.IO;
+using TurnOnMyPC.BusinessEntities;
 
 namespace TurnOnMyPC
 {
@@ -22,49 +23,73 @@ namespace TurnOnMyPC
             Response.Redirect("~/NotRegisteredPC.aspx");
         }
 
-        private void ProcessRegisteredPC()
+        private void ProcessTurnOnPC(UserPCInfo pcInfo)
         {
-            //pnlLogin.Visible = false;
-            //pnlPCStatus.Visible = true;
+            Core.PCToTurnOnQueue.AddItem(pcInfo.PCMacAddress);
+            Response.Redirect("~/Success.aspx");
+        }
 
-            //var pcName = Core.UserInfoStorage.GetUserPCName(txtLogin.Text);
-            //var isTurnedOn = Core.RemotePCManager.IsTurnedOn(pcName);
+        private void ProcessRegisteredPC(UserPCInfo pcInfo)
+        {
+            pnlLogin.Visible = false;
+            pnlPCStatus.Visible = true;
 
-            //lblPCName.Text = pcName;
-
-            //if (isTurnedOn)
-            //{
-            //    lblPCStatus.Text = "Running";
-            //    lblPCStatus.ForeColor = Color.Green;
-            //    btnTurnOn.Visible = false;
-            //}
-            //else
-            //{
-            //    lblPCStatus.Text = "Turned off";
-            //    lblPCStatus.ForeColor = Color.Red;
-            //    btnTurnOn.Visible = true;
-            //}
+            lblPCName.Text = pcInfo.PCName;
+            switch (pcInfo.State)
+            {
+                case PCState.Unknown:
+                    lblPCStatus.Text = "Unknown";
+                    lblPCStatus.ForeColor = Color.Orange;
+                    btnTurnOn.Visible = true;
+                    break;
+                case PCState.On:
+                    lblPCStatus.Text = "Running";
+                    lblPCStatus.ForeColor = Color.Green;
+                    btnTurnOn.Visible = false;
+                    break;
+                case PCState.Off:
+                    lblPCStatus.Text = "Turned off";
+                    lblPCStatus.ForeColor = Color.Red;
+                    btnTurnOn.Visible = true;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         protected void btnTurnOn_OnClick(object sender, EventArgs e)
         {
-            //var mac = Core.UserInfoStorage.GetUserMacAddress(txtLogin.Text);
-            //Core.RemotePCManager.WakeOnLan(mac);
-
-            //Response.Redirect("~/Success.aspx");
+            var pcInfo = GetCurrentPCInfo();
+            var isPCRegistered = pcInfo != null;
+            if (isPCRegistered)
+            {
+                ProcessTurnOnPC(pcInfo);
+            }
+            else
+            {
+                ProcessNotRegisterePC();
+            }
         }
 
         protected void btnEnterLogin_OnClick(object sender, EventArgs e)
         {
-            //var isPCRegistered = Core.UserInfoStorage.IsUserPCRegistered(txtLogin.Text);
-            //if (isPCRegistered)
-            //{
-            //    ProcessRegisteredPC();
-            //}
-            //else
-            //{
-            //    ProcessNotRegisterePC();
-            //}
+            var pcInfo = GetCurrentPCInfo();
+            var isPCRegistered = pcInfo != null;
+            if (isPCRegistered)
+            {
+                ProcessRegisteredPC(pcInfo);
+            }
+            else
+            {
+                ProcessNotRegisterePC();
+            }
+        }
+
+        private UserPCInfo GetCurrentPCInfo()
+        {
+            var login = txtLogin.Text;
+            var pcInfo = Core.UserInfoStorage.GetData(login);
+            return pcInfo;
         }
     }
 }

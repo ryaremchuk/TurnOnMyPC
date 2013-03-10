@@ -172,6 +172,8 @@ namespace TurnOnMyPCProcessing.localhost {
         
         private string pCNameField;
         
+        private string pCMacAddressField;
+        
         private PCState stateField;
         
         /// <remarks/>
@@ -191,6 +193,16 @@ namespace TurnOnMyPCProcessing.localhost {
             }
             set {
                 this.pCNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PCMacAddress {
+            get {
+                return this.pCMacAddressField;
+            }
+            set {
+                this.pCMacAddressField = value;
             }
         }
         

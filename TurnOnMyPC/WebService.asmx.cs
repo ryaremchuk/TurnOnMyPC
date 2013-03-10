@@ -15,14 +15,16 @@ namespace TurnOnMyPC
         [WebMethod]
         public List<string> GetMacsToTurnOn(string userName, string password)
         {
-            return ProcessRequest(userName, password, () =>
+            var result = ProcessRequest(userName, password, () =>
                 {
-                    var result = Core.PCToTurnOnQueue.GetAll();
+                    var queue = Core.PCToTurnOnQueue.GetAll();
                     //todo: think about this clear... Is this good solution? RY
                     Core.PCToTurnOnQueue.Clear();
 
-                    return result;
-                }).ToList();
+                    return queue;
+                });
+
+            return result.ToList();
         }
 
         [WebMethod]

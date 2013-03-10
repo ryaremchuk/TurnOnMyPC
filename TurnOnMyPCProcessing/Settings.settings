@@ -2,19 +2,17 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TurnOnMyPCProcessing" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="UserPCList" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">
-                  &lt;ArrayOfUserPCInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-                  &lt;LocalUserPCInfo&gt;
-                    &lt;UserDomainLogin&gt;test&lt;/UserDomainLogin&gt;
-                    &lt;PCName&gt;ws-if-cp0763&lt;/PCName&gt;
-                    &lt;PCMacAddress&gt;7071BCB0FD07&lt;/PCMacAddress&gt;
-                  &lt;/LocalUserPCInfo&gt;
-                  &lt;/ArrayOfUserPCInfo&gt;
-                </Value>
-    </Setting>
     <Setting Name="TurnOnMyPCProcessing_localhost_WebService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost/TurnOnMyPC/WebService.asmx</Value>
+    </Setting>
+    <Setting Name="webServiceUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">securedUser</Value>
+    </Setting>
+    <Setting Name="webServiceUserPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Qewog$%@ef@</Value>
+    </Setting>
+    <Setting Name="PathToDataFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">d:\Projects\MyGithub\TurnOnMyPC\TurnOnMyPCProcessing\PCData.xml</Value>
     </Setting>
   </Settings>
 </SettingsFile>

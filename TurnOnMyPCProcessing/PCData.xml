@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfLocalUserPCInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalUserPCInfo>
+    <Login>test</Login>
+    <PCName>sdsd</PCName>
+    <MacAddress>ds</MacAddress>
+    <State>Unknown</State>
+  </LocalUserPCInfo>
+  <LocalUserPCInfo>
+    <Login>rostyslav</Login>
+    <PCName>localhost</PCName>
+    <MacAddress>dsaa</MacAddress>
+    <State>Unknown</State>
+  </LocalUserPCInfo>
+
+</ArrayOfLocalUserPCInfo>

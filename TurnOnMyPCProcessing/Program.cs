@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 
 namespace TurnOnMyPCProcessing
 {
@@ -23,6 +24,7 @@ namespace TurnOnMyPCProcessing
 #else
             var service = new ProcessingService();
             service.Process();
+            Thread.Sleep(Timeout.Infinite);
 #endif
         }
     }

@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 
-namespace TurnOnMyPCProcessing
+namespace TurnOnMyPCProcessing.Logic
 {
     public class RemotePCManager
     {

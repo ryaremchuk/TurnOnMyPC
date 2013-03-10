@@ -25,28 +25,38 @@ namespace TurnOnMyPCProcessing {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"
-                  <ArrayOfUserPCInfo xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"">
-                  <LocalUserPCInfo>
-                    <UserDomainLogin>test</UserDomainLogin>
-                    <PCName>ws-if-cp0763</PCName>
-                    <PCMacAddress>7071BCB0FD07</PCMacAddress>
-                  </LocalUserPCInfo>
-                  </ArrayOfUserPCInfo>
-                ")]
-        public string UserPCList {
-            get {
-                return ((string)(this["UserPCList"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/TurnOnMyPC/WebService.asmx")]
         public string TurnOnMyPCProcessing_localhost_WebService {
             get {
                 return ((string)(this["TurnOnMyPCProcessing_localhost_WebService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("securedUser")]
+        public string webServiceUserName {
+            get {
+                return ((string)(this["webServiceUserName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Qewog$%@ef@")]
+        public string webServiceUserPassword {
+            get {
+                return ((string)(this["webServiceUserPassword"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("d:\\Projects\\MyGithub\\TurnOnMyPC\\TurnOnMyPCProcessing\\PCData.xml")]
+        public string PathToDataFile {
+            get {
+                return ((string)(this["PathToDataFile"]));
             }
         }
     }
