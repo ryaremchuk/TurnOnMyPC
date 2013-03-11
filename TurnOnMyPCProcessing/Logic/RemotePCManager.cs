@@ -11,9 +11,16 @@ namespace TurnOnMyPCProcessing.Logic
     {
         public bool IsTurnedOn(string computerName)
         {
-            var ping = new Ping();
-            var reply = ping.Send(computerName, 1000);
-            return reply.Status == IPStatus.Success;
+            try
+            {
+                var ping = new Ping();
+                var reply = ping.Send(computerName, 200);
+                return reply.Status == IPStatus.Success;
+            }
+            catch (PingException)
+            {
+                return false;
+            }
         }
 
         public void WakeOnLan(string macAddress)

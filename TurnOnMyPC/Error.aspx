@@ -8,9 +8,13 @@
     </style>
     
 </asp:Content>
+
 <asp:Content runat="server" ContentPlaceHolderID="Body">
-    <div class="Message">
+    <div class="Title">
         Oooops....<br/>
-        Some troubles happend. Please contact system administrator :).
+        Some troubles happend. Please contact system administrator :)
+    </div>
+    <div class="Description">
+        <a href="Default.aspx">Try to turn one more time?</a>
     </div>
 </asp:Content>

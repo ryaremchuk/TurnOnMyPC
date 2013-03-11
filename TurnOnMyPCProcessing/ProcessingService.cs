@@ -1,5 +1,5 @@
 ﻿using System;
-using System.IO;
+using System.Diagnostics;
 using System.ServiceProcess;
 using System.Timers;
 using TurnOnMyPCProcessing.Logic;
@@ -14,6 +14,7 @@ namespace TurnOnMyPCProcessing
         private readonly RemotePCManager _remotePcManager = new RemotePCManager();
         private readonly UserInfoStorage _userInfoStorage = new UserInfoStorage();
         private readonly WebServiceWrapper _webServiceWrapper = new WebServiceWrapper();
+        private readonly LoggerService _loggerService = new LoggerService();
 
         public ProcessingService()
         {
@@ -29,6 +30,8 @@ namespace TurnOnMyPCProcessing
 
         protected override void OnStart(string[] args)
         {
+            _loggerService.CreateSourceIfNotExist();
+
             CreateUpdateInfoJob();
             CreateStartPCJobTimer();
         }
@@ -39,25 +42,28 @@ namespace TurnOnMyPCProcessing
             {
                 DoStartPC();
             }
-            catch
+            catch (Exception ex)
             {
-                //
+                _loggerService.LogException(ex);
             }
 
             _startPCTimer.Start();
-
         }
 
         private void UpdateInfoTimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
         {
             try
             {
+                var sw = new Stopwatch();
+                sw.Start();
                 DoUpdatePCStatuses();
+                sw.Stop();
             }
-            catch
+            catch (Exception ex)
             {
-                //
+                _loggerService.LogException(ex);
             }
+
             _updateInfoTimer.Start();
         }
 

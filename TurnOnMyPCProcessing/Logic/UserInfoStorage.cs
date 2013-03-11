@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using TurnOnMyPCProcessing.BusinessEntities;
 
 namespace TurnOnMyPCProcessing.Logic
@@ -22,17 +23,6 @@ namespace TurnOnMyPCProcessing.Logic
         private void TryReloadData()
         {
             //todo: think about another way to store PC settings. because we can have a lot of PCs. RY
-            var d = new List<LocalUserPCInfo>
-                {
-                    new LocalUserPCInfo
-                        {
-                            Login = "test",
-                            PCName = "sdsd",
-                            MacAddress = "ds"
-                        }
-                };
-            var ds = XmlSerializationService<List<LocalUserPCInfo>>.Serialize(d);
-
             var serializedData = File.ReadAllText(Settings.Default.PathToDataFile);
 
             var dataFromFile = XmlSerializationService<List<LocalUserPCInfo>>.Deserialize(serializedData);
@@ -45,19 +35,12 @@ namespace TurnOnMyPCProcessing.Logic
         private void RefreshAllStatuses()
         {
             var remotePcManager = new RemotePCManager();
-            foreach (var info in _data)
-            {
-                try
+            Parallel.ForEach(_data, (info) =>
                 {
-                    info.State = remotePcManager.IsTurnedOn(info.PCName)
-                                     ? LocalPCState.On
-                                     : LocalPCState.Off;
-                }
-                catch
-                {
-                    continue;
-                }
-            }
+                    info.State = LocalPCState.Off;
+                    if (remotePcManager.IsTurnedOn(info.PCName))
+                        info.State = LocalPCState.On;
+                });
         }
     }
 }

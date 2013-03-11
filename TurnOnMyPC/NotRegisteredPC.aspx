@@ -2,8 +2,13 @@
 
 
 <asp:Content runat="server" ContentPlaceHolderID="Body">
-    <div class="Message">
-        Your PC is <b>not registered</b> in the system. Please contact Denys Nosenko for support.
+    <div class="Title">
+        Your PC is <b>not registered</b> in the system.
+    </div>
+    <div class="Description">
+        Please contact Denys Nosenko for support.
+        <br/>
+        Or <a href="Default.aspx">Try another login?</a>
     </div>
 </asp:Content>
 

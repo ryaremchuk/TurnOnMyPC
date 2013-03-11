@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnOnMyPC", "TurnOnMyPC\Tu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnOnMyPCProcessing", "TurnOnMyPCProcessing\TurnOnMyPCProcessing.csproj", "{119B255B-1BF1-4589-A4F6-C10B3D1BA27C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TurnOnMyPCProcessingSetup", "TurnOnMyPCProcessingSetup\TurnOnMyPCProcessingSetup.vdproj", "{0D608065-8E4F-44C4-86A5-B3DAB4696419}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,17 @@ Global
 		{119B255B-1BF1-4589-A4F6-C10B3D1BA27C}.Release|Mixed Platforms.Build.0 = Release|x86
 		{119B255B-1BF1-4589-A4F6-C10B3D1BA27C}.Release|x86.ActiveCfg = Release|x86
 		{119B255B-1BF1-4589-A4F6-C10B3D1BA27C}.Release|x86.Build.0 = Release|x86
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Debug|Any CPU.ActiveCfg = Debug
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Debug|Any CPU.Build.0 = Debug
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Debug|x86.ActiveCfg = Debug
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Debug|x86.Build.0 = Debug
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Release|Any CPU.ActiveCfg = Release
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Release|Any CPU.Build.0 = Release
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Release|Mixed Platforms.ActiveCfg = Release
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Release|Mixed Platforms.Build.0 = Release
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Release|x86.ActiveCfg = Release
+		{0D608065-8E4F-44C4-86A5-B3DAB4696419}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

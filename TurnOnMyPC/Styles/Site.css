@@ -10,8 +10,6 @@
 
 input[type="submit"], input[type="button"]
 {
-    font-size: 0.5em;
-    line-height: 2em;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     -o-border-radius: 2px;
@@ -26,8 +24,9 @@ input[type="submit"], input[type="button"]
     outline: 0 none;
     border: 1px solid #bcbcbc;
     background-color: #66CC66;
-    height: 2em;
 
+    height: 1.5em;
+    margin: 5px 0;
 }
 
 input[type="submit"]:hover, input[type="button"]:hover
@@ -48,35 +47,29 @@ input[type="submit"]:focus, input[type="button"]:focus
 
 input[type="submit"], input[type="button"]
 {
-    margin: 0px 5px 0px 5px;
-    padding: 0 6px;
-    min-width: 160px;
-    
+    min-width: 50px;
 }
 
 input[type="text"]
 {
-    font-size: 0.5em;
-    line-height: 2em;
-    
     outline: 0 none;
     border: 1px solid #bcbcbc;
-    height: 2em;
-    min-width: 300px;
+    min-width: 50px;
+    height: 1.5em;
 }
 
 .Title 
 {
-    font-size: 3.5em;
+    font-size: 1.5em;
 }
 
 .Description 
 {
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .InfoContainer 
 {
-    padding-left: 100px;
+    padding-left: 10%;
     padding-top: 5%;
 }

@@ -6,8 +6,9 @@
             Enter your domain login:
         </div>
         <div class="Description">
-            <asp:TextBox runat="server" ID="txtLogin" Width="30%" ></asp:TextBox>
-            <asp:Button runat="server" ID="btnEnterLogin" Text="Next" Width="100" OnClick="btnEnterLogin_OnClick"/>
+            <asp:TextBox runat="server" ID="txtLogin" Width="250px" ></asp:TextBox>
+            <br/>
+            <asp:Button runat="server" ID="btnEnterLogin" Text="Next" Width="25%" Style="max-width: 100px" OnClick="btnEnterLogin_OnClick"/>
         </div>
     </asp:Panel>
         
