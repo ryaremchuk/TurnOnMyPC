@@ -50,6 +50,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
         "Release"
@@ -74,6 +87,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
     }
@@ -81,6 +107,20 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_77FA4DCB397C4C799A9DBDCFE6CDEEAF"
+            {
+            "Name" = "8:Primary output from TurnOnMyPCProcessing (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_C631A417160A44FDA1D0257D17208DEA"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_83D4EA3C_491F_41B0_B7CC_571E58573305"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:/USERNAME=\\\"[USERNAME]\\\" /PASSWORD=\\\"[PASSWORD]\\\" /WebServiceURL=\\\"[WebServiceURL]\\\" /PathToDataFile=\\\"[PathToDataFile]\\\""
+            }
         }
         "DefaultFeature"
         {
@@ -159,7 +199,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:TurnOnMyPCProcessingSetup"
+        "ProductName" = "8:TurnOnMyPC"
         "ProductCode" = "8:{235BB2D7-BFB1-4F1F-ABE8-EA3E840C0EEE}"
         "PackageCode" = "8:{FB075300-7A64-43AA-A04C-C3A90E1436A3}"
         "UpgradeCode" = "8:{57E271C0-BBF7-4119-B373-D846475A38BE}"
@@ -169,12 +209,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Rostyslav Yaremchuk"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:TurnOnMyPCProcessingSetup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Rostyslav Yaremchuk"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
