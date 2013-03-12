@@ -15,6 +15,6 @@
         Some troubles happend. Please contact system administrator :)
     </div>
     <div class="Description">
-        <a href="Default.aspx">Try to turn one more time?</a>
+        <a href="Default.aspx">Go home...</a>
     </div>
 </asp:Content>

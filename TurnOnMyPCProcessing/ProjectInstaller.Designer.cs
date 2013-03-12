@@ -33,12 +33,16 @@
             // 
             // serviceProcessInstaller
             // 
+            this.serviceProcessInstaller.Account = System.ServiceProcess.ServiceAccount.NetworkService;
             this.serviceProcessInstaller.Password = null;
             this.serviceProcessInstaller.Username = null;
             // 
             // serviceInstaller
             // 
+            this.serviceInstaller.Description = "Service for wake up PCs in local network";
+            this.serviceInstaller.DisplayName = "Turn on my PC";
             this.serviceInstaller.ServiceName = "TurnOnMyPCProcessing";
+            this.serviceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 

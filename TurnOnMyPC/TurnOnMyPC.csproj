@@ -51,10 +51,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
+    <Content Include="FilterMyPC.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="NotRegisteredPC.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Success.aspx" />
     <Content Include="Web.config">
@@ -66,17 +65,19 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Default.aspx" />
+    <Content Include="AllStatuses.aspx" />
     <Content Include="WebService.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessEntities\PCState.cs" />
     <Compile Include="Core.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="FilterMyPC.aspx.cs">
+      <DependentUpon>FilterMyPC.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="FilterMyPC.aspx.designer.cs">
+      <DependentUpon>FilterMyPC.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
@@ -90,14 +91,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logic\PCToTurnOnQueue.cs" />
-    <Compile Include="Logic\UserInfoStorage.cs" />
-    <Compile Include="NotRegisteredPC.aspx.cs">
-      <DependentUpon>NotRegisteredPC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NotRegisteredPC.aspx.designer.cs">
-      <DependentUpon>NotRegisteredPC.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Logic\LocalUserInfoStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -112,6 +106,20 @@
     </Compile>
     <Compile Include="Success.aspx.designer.cs">
       <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllStatuses.aspx.cs">
+      <DependentUpon>AllStatuses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllStatuses.aspx.designer.cs">
+      <DependentUpon>AllStatuses.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebService.asmx.cs">
       <DependentUpon>WebService.asmx</DependentUpon>

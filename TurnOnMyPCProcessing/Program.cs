@@ -14,17 +14,17 @@ namespace TurnOnMyPCProcessing
         /// </summary>
         static void Main()
         {
-#if RELEASE
+#if DEBUG
+            var service = new ProcessingService();
+            service.Process();
+            Thread.Sleep(Timeout.Infinite);
+#else
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
 			{ 
 				new ProcessingService() 
 			};
             ServiceBase.Run(ServicesToRun);
-#else
-            var service = new ProcessingService();
-            service.Process();
-            Thread.Sleep(Timeout.Infinite);
 #endif
         }
     }

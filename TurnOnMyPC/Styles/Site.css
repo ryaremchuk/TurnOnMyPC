@@ -73,3 +73,9 @@ input[type="text"]
     padding-left: 10%;
     padding-top: 5%;
 }
+
+.Error 
+{
+    border: 1px solid #ff0000;
+    color: #ff6666;
+}

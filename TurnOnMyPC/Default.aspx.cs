@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using TurnOnMyPC.BusinessEntities;
 
 namespace TurnOnMyPC
@@ -14,26 +18,7 @@ namespace TurnOnMyPC
                 return;
             }
 
-            pnlLogin.Visible = true;
-            pnlPCStatus.Visible = false;
-        }
-
-        private void ProcessNotRegisterePC()
-        {
-            Response.Redirect("~/NotRegisteredPC.aspx");
-        }
-
-        private void ProcessTurnOnPC(UserPCInfo pcInfo)
-        {
-            Core.PCToTurnOnQueue.AddItem(pcInfo.PCMacAddress);
-            Response.Redirect("~/Success.aspx");
-        }
-
-        private void ProcessRegisteredPC(UserPCInfo pcInfo)
-        {
-            pnlLogin.Visible = false;
-            pnlPCStatus.Visible = true;
-
+            var pcInfo = GetCurrentPCInfo();
             lblPCName.Text = pcInfo.PCName;
             switch (pcInfo.State)
             {
@@ -60,35 +45,20 @@ namespace TurnOnMyPC
         protected void btnTurnOn_OnClick(object sender, EventArgs e)
         {
             var pcInfo = GetCurrentPCInfo();
-            var isPCRegistered = pcInfo != null;
-            if (isPCRegistered)
-            {
-                ProcessTurnOnPC(pcInfo);
-            }
-            else
-            {
-                ProcessNotRegisterePC();
-            }
+            ProcessTurnOnPC(pcInfo);
         }
 
-        protected void btnEnterLogin_OnClick(object sender, EventArgs e)
+
+        private void ProcessTurnOnPC(UserPCInfo pcInfo)
         {
-            var pcInfo = GetCurrentPCInfo();
-            var isPCRegistered = pcInfo != null;
-            if (isPCRegistered)
-            {
-                ProcessRegisteredPC(pcInfo);
-            }
-            else
-            {
-                ProcessNotRegisterePC();
-            }
+            Core.PCToTurnOnQueue.AddItem(pcInfo.PCMacAddress);
+            Response.Redirect("~/Success.aspx");
         }
 
         private UserPCInfo GetCurrentPCInfo()
         {
-            var login = txtLogin.Text;
-            var pcInfo = Core.UserInfoStorage.GetData(login);
+            var login = HttpContext.Current.User.Identity.Name;
+            var pcInfo = Core.LocalUserInfoStorage.GetData(login);
             return pcInfo;
         }
     }

@@ -5,7 +5,7 @@ using TurnOnMyPC.BusinessEntities;
 
 namespace TurnOnMyPC.Logic
 {
-    public class UserInfoStorage
+    public class LocalUserInfoStorage
     {
         private static List<UserPCInfo> _data = new List<UserPCInfo>();
 
@@ -17,6 +17,17 @@ namespace TurnOnMyPC.Logic
 
         public UserPCInfo GetData(string userName)
         {
+            if (userName == "1")
+            {
+                return new UserPCInfo
+                    {
+                        Login = "1",
+                        PCMacAddress = "asd",
+                        PCName = "pc name",
+                        State = PCState.Unknown
+                    };
+            }
+
             return _data.FirstOrDefault(d => d.Login.ToLower() == userName.ToLower());
         }
     }

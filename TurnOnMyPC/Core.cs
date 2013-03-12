@@ -5,21 +5,21 @@ namespace TurnOnMyPC
     public class Core
     {
         private static PCToTurnOnQueue _pcToTurnOnQueue;
-        private static UserInfoStorage _userInfoStorage;
+        private static LocalUserInfoStorage _localUserInfoStorage;
 
         public static PCToTurnOnQueue PCToTurnOnQueue
         {
             get { return _pcToTurnOnQueue; }
         }
 
-        public static UserInfoStorage UserInfoStorage
+        public static LocalUserInfoStorage LocalUserInfoStorage
         {
-            get { return _userInfoStorage; }
+            get { return _localUserInfoStorage; }
         }
 
         public static void Initialize()
         {
-             _userInfoStorage = new UserInfoStorage();
+             _localUserInfoStorage = new LocalUserInfoStorage();
             _pcToTurnOnQueue = new PCToTurnOnQueue();
         }
     }

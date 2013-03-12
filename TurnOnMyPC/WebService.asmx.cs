@@ -32,7 +32,7 @@ namespace TurnOnMyPC
         {
             return ProcessRequest(userName, password, () =>
             {
-                Core.UserInfoStorage.ReloadData(data);
+                Core.LocalUserInfoStorage.ReloadData(data);
                 return true;
             });
         }

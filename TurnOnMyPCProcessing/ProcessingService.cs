@@ -28,6 +28,7 @@ namespace TurnOnMyPCProcessing
         protected override void OnStart(string[] args)
         {
             _loggerService.CreateSourceIfNotExist();
+            _loggerService.LogInformation("Service started");
 
             CreateJobSchedulers();
             _schedulers.ForEach(s => s.Start());
@@ -49,6 +50,7 @@ namespace TurnOnMyPCProcessing
         protected override void OnStop()
         {
             _schedulers.ForEach(s => s.Stop());
+            _loggerService.LogInformation("Service stopped");
         }
     }
 }

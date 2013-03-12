@@ -17,25 +17,10 @@ namespace TurnOnMyPCProcessing
             InitializeComponent();
         }
 
-        public override void Install(IDictionary stateSaver)
-        {
-            //todo: update app config here.
-            base.Install(stateSaver);
-        }
-
-
         private void ProjectInstaller_AfterInstall(object sender, InstallEventArgs e)
         {
-            StartWinService();
- 
-        }
-
-        private void StartWinService()
-        {
-            using (var controller = new ServiceController(serviceInstaller.ServiceName))
-            {
-                controller.Start();
-            }
+            var sc = new ServiceController(serviceInstaller.ServiceName);
+            sc.Start();
         }
     }
 }
