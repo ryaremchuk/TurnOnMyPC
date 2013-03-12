@@ -2,10 +2,11 @@
 using System.IO;
 using System.Threading.Tasks;
 using TurnOnMyPCProcessing.BusinessEntities;
+using TurnOnMyPCProcessing.Services;
 
 namespace TurnOnMyPCProcessing.Logic
 {
-    public class UserInfoStorage
+    public class LocalUserInfoStorage
     {
         private static List<LocalUserPCInfo> _data = new List<LocalUserPCInfo>();
 

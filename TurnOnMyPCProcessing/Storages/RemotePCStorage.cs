@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TurnOnMyPCProcessing.BusinessEntities;
 using TurnOnMyPCProcessing.localhost;
 
-namespace TurnOnMyPCProcessing.Logic
+namespace TurnOnMyPCProcessing.Storages
 {
-    public class WebServiceWrapper
+    public class RemotePCStorage
     {
         public void RefreshPCStatuses(IEnumerable<LocalUserPCInfo> data)
         {
