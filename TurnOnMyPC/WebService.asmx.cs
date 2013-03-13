@@ -18,13 +18,20 @@ namespace TurnOnMyPC
             var result = ProcessRequest(userName, password, () =>
                 {
                     var queue = Core.PCToTurnOnQueue.GetAll();
-                    //todo: think about this clear... Is this good solution? RY
-                    Core.PCToTurnOnQueue.Clear();
-
                     return queue;
                 });
 
             return result.ToList();
+        }
+
+        [WebMethod]
+        public void RemoveMacFromQueue(string userName, string password, string mac)
+        {
+            ProcessRequest(userName, password, () =>
+            {
+                Core.PCToTurnOnQueue.RemoveItem(mac);
+                return true;
+            });
         }
 
         [WebMethod]

@@ -31,6 +31,8 @@ namespace TurnOnMyPCProcessing.localhost {
         
         private System.Threading.SendOrPostCallback GetMacsToTurnOnOperationCompleted;
         
+        private System.Threading.SendOrPostCallback RemoveMacFromQueueOperationCompleted;
+        
         private System.Threading.SendOrPostCallback UpdateDataOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -75,6 +77,9 @@ namespace TurnOnMyPCProcessing.localhost {
         public event GetMacsToTurnOnCompletedEventHandler GetMacsToTurnOnCompleted;
         
         /// <remarks/>
+        public event RemoveMacFromQueueCompletedEventHandler RemoveMacFromQueueCompleted;
+        
+        /// <remarks/>
         public event UpdateDataCompletedEventHandler UpdateDataCompleted;
         
         /// <remarks/>
@@ -105,6 +110,38 @@ namespace TurnOnMyPCProcessing.localhost {
             if ((this.GetMacsToTurnOnCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetMacsToTurnOnCompleted(this, new GetMacsToTurnOnCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://us.demo.eleks.com/TurnOnMyPC/RemoveMacFromQueue", RequestNamespace="http://us.demo.eleks.com/TurnOnMyPC", ResponseNamespace="http://us.demo.eleks.com/TurnOnMyPC", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void RemoveMacFromQueue(string userName, string password, string mac) {
+            this.Invoke("RemoveMacFromQueue", new object[] {
+                        userName,
+                        password,
+                        mac});
+        }
+        
+        /// <remarks/>
+        public void RemoveMacFromQueueAsync(string userName, string password, string mac) {
+            this.RemoveMacFromQueueAsync(userName, password, mac, null);
+        }
+        
+        /// <remarks/>
+        public void RemoveMacFromQueueAsync(string userName, string password, string mac, object userState) {
+            if ((this.RemoveMacFromQueueOperationCompleted == null)) {
+                this.RemoveMacFromQueueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRemoveMacFromQueueOperationCompleted);
+            }
+            this.InvokeAsync("RemoveMacFromQueue", new object[] {
+                        userName,
+                        password,
+                        mac}, this.RemoveMacFromQueueOperationCompleted, userState);
+        }
+        
+        private void OnRemoveMacFromQueueOperationCompleted(object arg) {
+            if ((this.RemoveMacFromQueueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RemoveMacFromQueueCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -258,6 +295,10 @@ namespace TurnOnMyPCProcessing.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void RemoveMacFromQueueCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]

@@ -31,6 +31,17 @@ namespace TurnOnMyPCProcessing.Storages
             }            
         }
 
+        public void RemoveMacFromQueue(string mac)
+        {
+            using (var webService = new WebService())
+            {
+                webService.RemoveMacFromQueue(
+                    Settings.Default.webServiceUserName,
+                    Settings.Default.webServiceUserPassword,
+                    mac);
+            }            
+        }
+
         private UserPCInfo TransformToWebEntity(LocalUserPCInfo info)
         {
             return new UserPCInfo

@@ -22,6 +22,18 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="RemoveMacFromQueue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mac" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMacFromQueueResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="UpdateData">
         <s:complexType>
           <s:sequence>
@@ -66,6 +78,12 @@
   <wsdl:message name="GetMacsToTurnOnSoapOut">
     <wsdl:part name="parameters" element="tns:GetMacsToTurnOnResponse" />
   </wsdl:message>
+  <wsdl:message name="RemoveMacFromQueueSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveMacFromQueue" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMacFromQueueSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveMacFromQueueResponse" />
+  </wsdl:message>
   <wsdl:message name="UpdateDataSoapIn">
     <wsdl:part name="parameters" element="tns:UpdateData" />
   </wsdl:message>
@@ -77,6 +95,10 @@
       <wsdl:input message="tns:GetMacsToTurnOnSoapIn" />
       <wsdl:output message="tns:GetMacsToTurnOnSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="RemoveMacFromQueue">
+      <wsdl:input message="tns:RemoveMacFromQueueSoapIn" />
+      <wsdl:output message="tns:RemoveMacFromQueueSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="UpdateData">
       <wsdl:input message="tns:UpdateDataSoapIn" />
       <wsdl:output message="tns:UpdateDataSoapOut" />
@@ -86,6 +108,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetMacsToTurnOn">
       <soap:operation soapAction="http://us.demo.eleks.com/TurnOnMyPC/GetMacsToTurnOn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMacFromQueue">
+      <soap:operation soapAction="http://us.demo.eleks.com/TurnOnMyPC/RemoveMacFromQueue" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -107,6 +138,15 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetMacsToTurnOn">
       <soap12:operation soapAction="http://us.demo.eleks.com/TurnOnMyPC/GetMacsToTurnOn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMacFromQueue">
+      <soap12:operation soapAction="http://us.demo.eleks.com/TurnOnMyPC/RemoveMacFromQueue" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -23,6 +23,7 @@ namespace TurnOnMyPCProcessing.JobEngine.Jobs
             foreach (var address in pcAddresses)
             {
                 _remotePCManager.WakeOnLan(address);
+                _remotePCStorage.RemoveMacFromQueue(address);
             }
         }
     }

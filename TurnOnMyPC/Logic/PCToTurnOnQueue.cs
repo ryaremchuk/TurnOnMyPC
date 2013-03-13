@@ -25,9 +25,10 @@ namespace TurnOnMyPC.Logic
             return _data.ToArray();
         }
 
-        public void Clear()
+        public void RemoveItem(string mac)
         {
-            _data.Clear();
+            mac = mac.ToLower();
+            _data.Remove(mac);
         }
     }
 }
