@@ -14,6 +14,6 @@
         Your PC will be turned on in a while.
     </div>
     <div class="Description">
-        <a href="Default.aspx">Turn on one more PC?</a>
+        <a href="FilterMyPC.aspx">Turn on one more PC?</a>
     </div>
 </asp:Content>

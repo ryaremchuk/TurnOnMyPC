@@ -1,5 +1,4 @@
-﻿using TurnOnMyPCProcessing.Logic;
-using TurnOnMyPCProcessing.Services;
+﻿using TurnOnMyPCProcessing.Services;
 using TurnOnMyPCProcessing.Storages;
 
 namespace TurnOnMyPCProcessing.JobEngine.Jobs
