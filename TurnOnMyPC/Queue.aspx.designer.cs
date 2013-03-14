@@ -10,7 +10,7 @@
 namespace TurnOnMyPC {
     
     
-    public partial class AllStatuses {
+    public partial class Queue {
         
         /// <summary>
         /// rptData control.

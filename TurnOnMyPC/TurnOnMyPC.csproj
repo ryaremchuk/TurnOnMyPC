@@ -67,6 +67,7 @@
     </Content>
     <Content Include="Default.aspx" />
     <Content Include="AllStatuses.aspx" />
+    <Content Include="Queue.aspx" />
     <Content Include="WebService.asmx" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="AllStatuses.aspx.designer.cs">
       <DependentUpon>AllStatuses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Queue.aspx.cs">
+      <DependentUpon>Queue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Queue.aspx.designer.cs">
+      <DependentUpon>Queue.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebService.asmx.cs">
       <DependentUpon>WebService.asmx</DependentUpon>

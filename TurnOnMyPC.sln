@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnOnMyPC", "TurnOnMyPC\Tu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnOnMyPCProcessing", "TurnOnMyPCProcessing\TurnOnMyPCProcessing.csproj", "{119B255B-1BF1-4589-A4F6-C10B3D1BA27C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallTurnOnTest", "SmallTurnOnTest\SmallTurnOnTest.csproj", "{E80C2A64-989E-4AB4-B7ED-6D959A858858}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{119B255B-1BF1-4589-A4F6-C10B3D1BA27C}.Release|Mixed Platforms.Build.0 = Release|x86
 		{119B255B-1BF1-4589-A4F6-C10B3D1BA27C}.Release|x86.ActiveCfg = Release|x86
 		{119B255B-1BF1-4589-A4F6-C10B3D1BA27C}.Release|x86.Build.0 = Release|x86
+		{E80C2A64-989E-4AB4-B7ED-6D959A858858}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E80C2A64-989E-4AB4-B7ED-6D959A858858}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E80C2A64-989E-4AB4-B7ED-6D959A858858}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E80C2A64-989E-4AB4-B7ED-6D959A858858}.Debug|x86.ActiveCfg = Debug|x86
+		{E80C2A64-989E-4AB4-B7ED-6D959A858858}.Debug|x86.Build.0 = Debug|x86
+		{E80C2A64-989E-4AB4-B7ED-6D959A858858}.Release|Any CPU.ActiveCfg = Release|x86
+		{E80C2A64-989E-4AB4-B7ED-6D959A858858}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E80C2A64-989E-4AB4-B7ED-6D959A858858}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E80C2A64-989E-4AB4-B7ED-6D959A858858}.Release|x86.ActiveCfg = Release|x86
+		{E80C2A64-989E-4AB4-B7ED-6D959A858858}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

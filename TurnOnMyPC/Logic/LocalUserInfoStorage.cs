@@ -17,28 +17,50 @@ namespace TurnOnMyPC.Logic
 
         public UserPCInfo GetData(string userName)
         {
-            if (userName == "1")
-            {
-                return new UserPCInfo
-                    {
-                        Login = "1",
-                        PCMacAddress = "asd",
-                        PCName = "pc name",
-                        State = PCState.Unknown
-                    };
-            }
-            else if (userName == "2")
-            {
-                return new UserPCInfo
-                    {
-                        Login = "2",
-                        PCMacAddress = "asd",
-                        PCName = "pc name2",
-                        State = PCState.Unknown
-                    };
-            }
+            //if (userName == "1")
+            //{
+            //    return new UserPCInfo
+            //        {
+            //            Login = "1",
+            //            PCMacAddress = "asd",
+            //            PCName = "pc name",
+            //            State = PCState.Unknown
+            //        };
+            //}
+            //else if (userName == "2")
+            //{
+            //    return new UserPCInfo
+            //        {
+            //            Login = "2",
+            //            PCMacAddress = "asd",
+            //            PCName = "pc name2",
+            //            State = PCState.Unknown
+            //        };
+            //}
 
             return _data.FirstOrDefault(d => d.Login.ToLower() == userName.ToLower());
+        }
+
+        public IEnumerable<UserPCInfo> GetAllData()
+        {
+            //return new[]
+            //    {
+            //        new UserPCInfo
+            //            {
+            //                Login = "1",
+            //                PCMacAddress = "asd",
+            //                PCName = "pc name",
+            //                State = PCState.Unknown
+            //            },
+            //        new UserPCInfo
+            //            {
+            //                Login = "2",
+            //                PCMacAddress = "asd",
+            //                PCName = "pc name2",
+            //                State = PCState.On
+            //            }
+            //    };
+            return _data;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TurnOnMyPC
 {
-    public partial class AllStatuses : System.Web.UI.Page
+    public partial class Queue : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,7 @@ namespace TurnOnMyPC
                 return;
             }
 
-            rptData.DataSource = Core.LocalUserInfoStorage.GetAllData();
+            rptData.DataSource = Core.PCToTurnOnQueue.GetAll();
             rptData.DataBind();
         }
     }
