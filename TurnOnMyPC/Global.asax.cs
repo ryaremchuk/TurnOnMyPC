@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Routing;
 
 namespace TurnOnMyPC
 {
@@ -7,7 +8,13 @@ namespace TurnOnMyPC
 
         protected void Application_Start(object sender, EventArgs e)
         {
+            RegisterRoutes(RouteTable.Routes);
             Core.Initialize();
+        }
+
+        public static void RegisterRoutes(RouteCollection routeCollection)
+        {
+            routeCollection.MapPageRoute("Route-PCName", "{pcName}/Status", "~/MyPC.aspx");
         }
 
         protected void Session_Start(object sender, EventArgs e)

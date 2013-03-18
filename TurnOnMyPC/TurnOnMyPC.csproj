@@ -51,11 +51,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FilterMyPC.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Styles\Site.css" />
-    <Content Include="Success.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -65,7 +64,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Default.aspx" />
+    <Content Include="MyPC.aspx" />
     <Content Include="AllStatuses.aspx" />
     <Content Include="Queue.aspx" />
     <Content Include="WebService.asmx" />
@@ -73,12 +72,12 @@
   <ItemGroup>
     <Compile Include="BusinessEntities\PCState.cs" />
     <Compile Include="Core.cs" />
-    <Compile Include="FilterMyPC.aspx.cs">
-      <DependentUpon>FilterMyPC.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FilterMyPC.aspx.designer.cs">
-      <DependentUpon>FilterMyPC.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
@@ -101,19 +100,12 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Success.aspx.cs">
-      <DependentUpon>Success.aspx</DependentUpon>
+    <Compile Include="MyPC.aspx.cs">
+      <DependentUpon>MyPC.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Success.aspx.designer.cs">
-      <DependentUpon>Success.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="MyPC.aspx.designer.cs">
+      <DependentUpon>MyPC.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllStatuses.aspx.cs">
       <DependentUpon>AllStatuses.aspx</DependentUpon>

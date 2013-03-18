@@ -8,7 +8,7 @@ namespace TurnOnMyPCProcessing.JobEngine.Jobs
         private readonly RemotePCStorage _remotePCStorage;
         private readonly LocalUserInfoStorage _localUserInfoStorage;
 
-        public int RunningInterval { get { return 60*1000; } }
+        public int RunningInterval { get { return 30*1000; } }
 
         public UpdatePCInfoJob(RemotePCStorage remotePCStorage, LocalUserInfoStorage localUserInfoStorage)
         {

@@ -15,7 +15,7 @@ namespace TurnOnMyPC.Logic
             _data.AddRange(data);
         }
 
-        public UserPCInfo GetData(string userName)
+        public UserPCInfo GetData(string pcName)
         {
             //if (userName == "1")
             //{
@@ -38,7 +38,7 @@ namespace TurnOnMyPC.Logic
             //        };
             //}
 
-            return _data.FirstOrDefault(d => d.Login.ToLower() == userName.ToLower());
+            return _data.FirstOrDefault(d => d.PCName.ToLower() == pcName.ToLower());
         }
 
         public IEnumerable<UserPCInfo> GetAllData()

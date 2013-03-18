@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Drawing;
-using System.Web;
-using TurnOnMyPC.BusinessEntities;
+using System.Web.Security;
 
 namespace TurnOnMyPC
 {
@@ -9,53 +7,25 @@ namespace TurnOnMyPC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+        }
+
+        private void ProcessNotRegisterePC()
+        {
+            pnlError.Visible = true;
+        }
+
+        protected void btnCheckName_OnClick(object sender, EventArgs e)
+        {
+            var name = txtPcName.Text;
+            var isPCRegistered = Core.LocalUserInfoStorage.GetData(name) != null;
+            if (isPCRegistered)
             {
-                return;
+                Response.Redirect(string.Format("~/{0}/Status", name));
             }
-
-            var pcInfo = GetCurrentPCInfo();
-            lblPCName.Text = pcInfo.PCName;
-            switch (pcInfo.State)
+            else
             {
-                case PCState.Unknown:
-                    lblPCStatus.Text = "Unknown";
-                    lblPCStatus.ForeColor = Color.Orange;
-                    btnTurnOn.Visible = true;
-                    break;
-                case PCState.On:
-                    lblPCStatus.Text = "Running";
-                    lblPCStatus.ForeColor = Color.Green;
-                    btnTurnOn.Visible = false;
-                    break;
-                case PCState.Off:
-                    lblPCStatus.Text = "Turned off";
-                    lblPCStatus.ForeColor = Color.Red;
-                    btnTurnOn.Visible = true;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                ProcessNotRegisterePC();
             }
-        }
-
-        protected void btnTurnOn_OnClick(object sender, EventArgs e)
-        {
-            var pcInfo = GetCurrentPCInfo();
-            ProcessTurnOnPC(pcInfo);
-        }
-
-
-        private void ProcessTurnOnPC(UserPCInfo pcInfo)
-        {
-            Core.PCToTurnOnQueue.AddItem(pcInfo.PCMacAddress);
-            Response.Redirect("~/Success.aspx");
-        }
-
-        private UserPCInfo GetCurrentPCInfo()
-        {
-            var login = HttpContext.Current.User.Identity.Name;
-            var pcInfo = Core.LocalUserInfoStorage.GetData(login);
-            return pcInfo;
         }
     }
 }

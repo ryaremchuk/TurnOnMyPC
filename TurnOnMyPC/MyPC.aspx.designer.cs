@@ -10,33 +10,33 @@
 namespace TurnOnMyPC {
     
     
-    public partial class FilerMyPC {
+    public partial class MyPC {
         
         /// <summary>
-        /// txtLogin control.
+        /// lblPCName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLogin;
+        protected global::System.Web.UI.WebControls.Label lblPCName;
         
         /// <summary>
-        /// btnEnterLogin control.
+        /// lblPCStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnterLogin;
+        protected global::System.Web.UI.WebControls.Label lblPCStatus;
         
         /// <summary>
-        /// pnlError control.
+        /// btnTurnOn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlError;
+        protected global::System.Web.UI.WebControls.Button btnTurnOn;
     }
 }

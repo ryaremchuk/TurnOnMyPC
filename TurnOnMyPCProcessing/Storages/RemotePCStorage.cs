@@ -8,7 +8,7 @@ namespace TurnOnMyPCProcessing.Storages
 {
     public class RemotePCStorage
     {
-        public void RefreshPCStatuses(IEnumerable<LocalUserPCInfo> data)
+        public void RefreshPCStatuses(IEnumerable<PCInfo> data)
         {
             using (var webService = new WebService())
             {
@@ -42,12 +42,11 @@ namespace TurnOnMyPCProcessing.Storages
             }            
         }
 
-        private UserPCInfo TransformToWebEntity(LocalUserPCInfo info)
+        private UserPCInfo TransformToWebEntity(PCInfo info)
         {
             return new UserPCInfo
                 {
-                    Login = info.Login,
-                    PCName = info.PCName,
+                    PCName = info.Name,
                     State = ToWebEntity(info.State),
                     PCMacAddress = info.MacAddress
                 };

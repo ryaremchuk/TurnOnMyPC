@@ -1,13 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TurnOnMyPC.Default" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-         <div class="Title">
-            My PC: <asp:Label runat="server" ID="lblPCName"></asp:Label>
-        </div>
-        <div class="Description">
-            Status: <asp:Label Font-Bold="True" runat="server" ID="lblPCStatus"></asp:Label>
-            <br/>
-            <asp:Button runat="server" ID="btnTurnOn" Text="Turn it on!" Width="100" OnClick="btnTurnOn_OnClick"/>
-        </div>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" MasterPageFile="Site.Master" Inherits="TurnOnMyPC.Default" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="Body">
+    <div class="Title">
+        Enter your PC Name:
+    </div>
+    <div class="Description">
+        <asp:TextBox runat="server" ID="txtPcName" Width="250px" ></asp:TextBox>
+        <br/>
+        <asp:Button runat="server" ID="btnCheckName" Text="Next" Width="25%" Style="max-width: 100px" OnClick="btnCheckName_OnClick"/>
+    </div>
+    <asp:Panel runat="server" ID="pnlError" CssClass="Error" Width="250px" Visible="False">
+        Can not find such PC.<br/>
+        Please try another one.
+    </asp:Panel>
 </asp:Content>

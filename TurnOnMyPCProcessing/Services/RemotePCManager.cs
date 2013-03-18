@@ -43,6 +43,7 @@ namespace TurnOnMyPCProcessing.Services
 
         private byte[] TransformMac(string mac)
         {
+            mac = mac.Replace("-", "");
             var value = long.Parse(mac, NumberStyles.HexNumber, CultureInfo.CurrentCulture.NumberFormat);
             var macBytes = BitConverter.GetBytes(value);
 

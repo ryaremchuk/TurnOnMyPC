@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessEntities\LocalPCState.cs" />
-    <Compile Include="BusinessEntities\LocalUserPCInfo.cs" />
+    <Compile Include="BusinessEntities\PCInfo.cs" />
     <Compile Include="JobEngine\IJob.cs" />
     <Compile Include="JobEngine\JobScheduler.cs" />
     <Compile Include="JobEngine\Jobs\UpdatePCInfoJob.cs" />

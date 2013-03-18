@@ -8,9 +8,9 @@ namespace TurnOnMyPCProcessing.Logic
 {
     public class LocalUserInfoStorage
     {
-        private static List<LocalUserPCInfo> _data = new List<LocalUserPCInfo>();
+        private static List<PCInfo> _data = new List<PCInfo>();
 
-        public IEnumerable<LocalUserPCInfo> GetDatasource()
+        public IEnumerable<PCInfo> GetDatasource()
         {
             return _data;
         }
@@ -26,7 +26,7 @@ namespace TurnOnMyPCProcessing.Logic
             //todo: think about another way to store PC settings. because we can have a lot of PCs. RY
             var serializedData = File.ReadAllText(Settings.Default.PathToDataFile);
 
-            var dataFromFile = XmlSerializationService<List<LocalUserPCInfo>>.Deserialize(serializedData);
+            var dataFromFile = XmlSerializationService<List<PCInfo>>.Deserialize(serializedData);
             dataFromFile.ForEach(i => i.State = LocalPCState.Unknown);
 
             _data.Clear();
@@ -39,7 +39,7 @@ namespace TurnOnMyPCProcessing.Logic
             Parallel.ForEach(_data, (info) =>
                 {
                     info.State = LocalPCState.Off;
-                    if (remotePcManager.IsTurnedOn(info.PCName))
+                    if (remotePcManager.IsTurnedOn(info.Name))
                         info.State = LocalPCState.On;
                 });
         }

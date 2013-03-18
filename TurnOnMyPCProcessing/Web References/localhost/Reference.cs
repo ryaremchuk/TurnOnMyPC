@@ -205,23 +205,11 @@ namespace TurnOnMyPCProcessing.localhost {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://us.demo.eleks.com/TurnOnMyPC")]
     public partial class UserPCInfo {
         
-        private string loginField;
-        
         private string pCNameField;
         
         private string pCMacAddressField;
         
         private PCState stateField;
-        
-        /// <remarks/>
-        public string Login {
-            get {
-                return this.loginField;
-            }
-            set {
-                this.loginField = value;
-            }
-        }
         
         /// <remarks/>
         public string PCName {
