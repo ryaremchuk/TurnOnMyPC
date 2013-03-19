@@ -13,6 +13,11 @@
     <form id="form1" runat="server">
         <div>
             <div class="InfoContainer">
+                <% if (!Request.Url.ToString().ToLower().Contains("default.aspx"))
+                   { %>
+                <a href="Default.aspx">Find another pc?</a>
+                <br/>
+                <% } %>
                     <asp:ContentPlaceHolder ID="Body" runat="server">
                     </asp:ContentPlaceHolder>
             </div>

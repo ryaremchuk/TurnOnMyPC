@@ -10,7 +10,7 @@
 namespace TurnOnMyPC {
     
     
-    public partial class MyPC {
+    public partial class Status {
         
         /// <summary>
         /// lblPCName control.

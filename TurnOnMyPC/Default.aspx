@@ -7,7 +7,7 @@
     <div class="Description">
         <asp:TextBox runat="server" ID="txtPcName" Width="250px" ></asp:TextBox>
         <br/>
-        <asp:Button runat="server" ID="btnCheckName" Text="Next" Width="25%" Style="max-width: 100px" OnClick="btnCheckName_OnClick"/>
+        <asp:Button runat="server" ID="btnCheckName" Text="Next" Width="100px" OnClick="btnCheckName_OnClick"/>
     </div>
     <asp:Panel runat="server" ID="pnlError" CssClass="Error" Width="250px" Visible="False">
         Can not find such PC.<br/>

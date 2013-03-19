@@ -5,7 +5,7 @@ using TurnOnMyPC.BusinessEntities;
 
 namespace TurnOnMyPC
 {
-    public partial class MyPC : System.Web.UI.Page
+    public partial class Status : System.Web.UI.Page
     {
         private string PcName
         {
@@ -64,8 +64,7 @@ namespace TurnOnMyPC
 
         private void ProcessTurnOnPC(UserPCInfo pcInfo)
         {
-            Core.PCToTurnOnQueue.AddItem(pcInfo.PCMacAddress);
-            Response.Redirect("~/Success.aspx");
+            Response.Redirect(string.Format("~/{0}/TurnOn", pcInfo.PCName));
         }
 
         private UserPCInfo GetCurrentPCInfo()

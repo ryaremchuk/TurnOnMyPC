@@ -14,7 +14,8 @@ namespace TurnOnMyPC
 
         public static void RegisterRoutes(RouteCollection routeCollection)
         {
-            routeCollection.MapPageRoute("Route-PCName", "{pcName}/Status", "~/MyPC.aspx");
+            routeCollection.MapPageRoute("Route-PCNameStatus", "{pcName}/Status", "~/Status.aspx");
+            routeCollection.MapPageRoute("Route-PCNameTurnOn", "{pcName}/TurnOn", "~/TurnOn.aspx");
         }
 
         protected void Session_Start(object sender, EventArgs e)

@@ -64,9 +64,10 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="MyPC.aspx" />
+    <Content Include="Status.aspx" />
     <Content Include="AllStatuses.aspx" />
     <Content Include="Queue.aspx" />
+    <Content Include="TurnOn.aspx" />
     <Content Include="WebService.asmx" />
   </ItemGroup>
   <ItemGroup>
@@ -100,12 +101,12 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="MyPC.aspx.cs">
-      <DependentUpon>MyPC.aspx</DependentUpon>
+    <Compile Include="Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MyPC.aspx.designer.cs">
-      <DependentUpon>MyPC.aspx</DependentUpon>
+    <Compile Include="Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllStatuses.aspx.cs">
       <DependentUpon>AllStatuses.aspx</DependentUpon>
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="Queue.aspx.designer.cs">
       <DependentUpon>Queue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TurnOn.aspx.cs">
+      <DependentUpon>TurnOn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TurnOn.aspx.designer.cs">
+      <DependentUpon>TurnOn.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebService.asmx.cs">
       <DependentUpon>WebService.asmx</DependentUpon>
